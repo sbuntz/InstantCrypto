@@ -24,17 +24,35 @@
                 My first website with <strong>Bulma</strong>!
             </p>
         </div>
+        <div class="container">
+            <h3 class="center">news api test</h3>
+            <form>
+                <div class="input-field">
+                    <input type="text" id="searchquery">
+                    <label>search</label>
+                </div>
+                <div class="row">
+                    <input type="submit" id="searchbtn" value="search">
+                </div>
+            </form>
+            <div id="loader" style="display:none;">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="newsResults"></div>
+            </div>
+        </div>
+
+
     </section>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/news.js"></script>
 </body>
 
 </html>
-
-
-
-
-
