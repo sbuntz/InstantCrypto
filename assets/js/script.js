@@ -23,18 +23,11 @@ function searchCoin(coinName) {
         url: requestUrl,
         method: 'GET',
     }).then(function(response) {
-        console.log('Ajax Reponse \n-------------');
-        console.log(response);
+        // console.log('Ajax Reponse \n-------------');
+        // console.log(response);
 
-        const coinName = $("<h3>");
-        const coinPrice = $("<p>");
-
-        coinName.text(response.name);
-        coinPrice.text(response.current_price);
-
-        //need to appened here
-
-
+        $("#coin-heading").text(response[0].name);
+        $("#coin-price").text(`$ ${response[0].current_price}`);
 
     })
 }
