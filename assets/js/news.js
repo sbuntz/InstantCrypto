@@ -6,7 +6,7 @@ $(document).ready(function(){
         event.preventDefault();
       
       let query = $("#searchquery").val();
-      let requestUrl = " https://newsapi.org/v2/top-headlines?q="+query+"&&category=business&apiKey=822c6daf68da47f2aa999e05473aa7bb";
+      let requestUrl = " https://newsapi.org/v2/top-headlines?q="+query+"&category=business&apiKey=822c6daf68da47f2aa999e05473aa7bb";
       
       $.ajax({
         url: requestUrl,
