@@ -12,41 +12,41 @@
 // }
 // ]
 
+//without having the search button, you need to attempt this in the inspect / console. 
+//you need to type in searchCoin('bitcoin')         or any other coin you want to look at 
+//but when its in the search bar it should work 
 
-//https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud    gives you the price of Bitcoin 
-//not going to work yet as we dont have a search Button done 
-// let crpyto = '';
-// let searchButton = $('#searchButton');
-// searchButton.on('click', function() {
-//     crypto = $('#newCrypto').val().toLowerCase();
-//     getData(crypto)
-// })
+function searchCoin(coinName) {
+    let requestUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinName}`
+
+    $.ajax({
+        url: requestUrl,
+        method: 'GET',
+    }).then(function(response) {
+        console.log('Ajax Reponse \n-------------');
+        console.log(response);
+
+        const coinName = $("<h3>");
+        const coinPrice = $("<p>");
+
+        coinName.text(response.name);
+        coinPrice.text(response.current_price);
+
+        //need to appened here
 
 
-// $(document).ready(function(){
-//        $("#searchbtn").on("click",function(event){
-//         event.preventDefault();
-//         let query = $('#searchquery').val();
-//         let requestUrl = `https://api.coingecko.com/api/v3/simple/price?ids="+quer"&vs_currencies=aud`
 
-// })
+    })
+}
 
-//////////
 $(document).ready(function() {
 
     $("#searchbtn").on("click", function(event) {
         event.preventDefault();
 
         let query = $("#searchquery").val();
-        let requestUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${query}&vs_currencies=aud`
 
-        $.ajax({
-            url: requestUrl,
-            method: 'GET',
-        }).then(function(response) {
-            console.log('Ajax Reponse \n-------------');
-            console.log(response);
-        })
+        searchCoin(query)
     })
 })
 
