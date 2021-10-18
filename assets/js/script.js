@@ -1,24 +1,24 @@
 
 // function to display coin information
-function displayCoinData(){
-    // variables for HTML elements
-    const coinContainer = $('coin-container');
-    const coinHeading = $('coin-heading');
-    const coinPrice = $('coin-price');
+// function displayCoinData(){
+//     // variables for HTML elements
+//     const coinContainer = $('coin-container');
+//     const coinHeading = $('coin-heading');
+//     const coinPrice = $('coin-price');
 
     
 
-    // print data to the page
-    coinHeading.text(coinName)
-    coinPrice.text(coinPrice)
-};
+//     // print data to the page
+//     coinHeading.text(coinName)
+//     coinPrice.text(coinPrice)
+// };
 
 // function to display news information
-function displayCoinData(){
-    const newsContainer = $('news-container');
+// function displayCoinData(){
+//     const newsContainer = $('news-container');
 
     
-};
+// };
 
 // const apiKey = `https://api.coingecko.com/api/v3/coins/bitcoin`
 
@@ -48,10 +48,10 @@ function searchCoin(coinID) {
 
         $("#coin-heading").text(response[0].name);
         $("#coin-price").text(`$ ${response[0].current_price}`);
-        $("#coin-price").text(`$ ${response[0].price_change_percentage_24h}`);
-        $("#coin-price").text(`$ ${response[0].ath}`);
-        $("#coin-price").text(`$ ${response[0].high_24h}`);
-        $("#coin-price").text(`$ ${response[0].low_24h}`);
+        // $("#coin-price").text(`$ ${response[0].price_change_percentage_24h}`);
+        // $("#coin-price").text(`$ ${response[0].ath}`);
+        // $("#coin-price").text(`$ ${response[0].high_24h}`);
+        // $("#coin-price").text(`$ ${response[0].low_24h}`);
 
         console.log(response)
     })
@@ -59,10 +59,10 @@ function searchCoin(coinID) {
 
 $(document).ready(function() {
 
-    $("#searchbtn").on("click", function(event) {
+    $("#search-button").on("click", function(event) {
         event.preventDefault();
 
-        let query = $("#searchquery").val();
+        let query = $("#coin-name").val();
 
         searchCoin(query)
     })
