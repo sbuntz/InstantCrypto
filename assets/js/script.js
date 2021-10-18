@@ -1,72 +1,49 @@
-
-// function to display coin information
-// function displayCoinData(){
-//     // variables for HTML elements
-//     const coinContainer = $('coin-container');
-//     const coinHeading = $('coin-heading');
-//     const coinPrice = $('coin-price');
-
-    
-
-//     // print data to the page
-//     coinHeading.text(coinName)
-//     coinPrice.text(coinPrice)
-// };
-
-// function to display news information
-// function displayCoinData(){
-//     const newsContainer = $('news-container');
-
-    
-// };
-
-// const apiKey = `https://api.coingecko.com/api/v3/coins/bitcoin`
-
-//parameters 
-// [{
-// "id": "bitcoin"
-// "symbol": "btc",
-// "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
-// "current_price": 77977,
-// "price_change_24h": 2886.48,
-// "ath": 84381,
-// "market_cap_rank": 1,
-// }
-// ]
-
-
+$("#search-button").on("click", function (event) {
+    event.preventDefault();
+    const coinID = $("#coin-name").val();
+    newsCall(coinID)
+    searchCoin(coinID)
+});
 
 function searchCoin(coinID) {
-    let requestUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`
+    console.log("searchCoin");
+    const queryURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`;
 
-    $.ajax({
-        url: requestUrl,
-        method: 'GET',
-    }).then(function(response) {
-        // console.log('Ajax Reponse \n-------------');
-        // console.log(response);
+    fetch(queryURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            $("#coin-heading").text(data[0].name);
+            $("#coin-price").text(`$ ${data[0].current_price}`);
+        })
+};
 
-        $("#coin-heading").text(response[0].name);
-        $("#coin-price").text(`$ ${response[0].current_price}`);
-        // $("#coin-price").text(`$ ${response[0].price_change_percentage_24h}`);
-        // $("#coin-price").text(`$ ${response[0].ath}`);
-        // $("#coin-price").text(`$ ${response[0].high_24h}`);
-        // $("#coin-price").text(`$ ${response[0].low_24h}`);
 
-        console.log(response)
-    })
+function newsCall(coinID) {
+    console.log("newsCoin");
+    const queryURL = `https://newsapi.org/v2/top-headlines?q=${coinID}&language=en&category=business&apiKey=822c6daf68da47f2aa999e05473aa7bb`;
+
+    fetch(queryURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            // console.log(data);
+            processData(data);
+            console.log("test")
+        })
+};
+
+function processData(data) {
+    console.log("article information")
+
+    for (var i = 0; i < 5; i++) {
+        var author = data.articles[i].author;
+        var title = data.articles[i].title;
+        var artUrl = data.articles[i].url;
+
+        console.log(author, title, artUrl)
+    };
 }
-
-$(document).ready(function() {
-
-    $("#search-button").on("click", function(event) {
-        event.preventDefault();
-
-        let query = $("#coin-name").val();
-
-        searchCoin(query)
-    })
-})
-
-//test..
 
