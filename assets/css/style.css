@@ -1,7 +1,14 @@
 *  {
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.body {
+ul {
+    font-size: 20px;
+}
 
+.search-bar {
+    display: flex;
+    align-items: flex-end;
 }
