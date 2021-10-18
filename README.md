@@ -8,3 +8,4 @@ git checkout git-readme-instructions (branch already exists)
 4. cd
 5. ls
 6. ls -la
+7. git diff --staged 
