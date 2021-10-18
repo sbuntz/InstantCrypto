@@ -18,8 +18,8 @@
 </head>
 
 <body>
-
     <header>
+        <!-- main nav bar -->
         <div class="tabs is-centered">
             <ul>
                 <li class="is-active"><a>Crypto Currencies</a></li>
@@ -30,41 +30,32 @@
         </div>
     </header>
 
- html-boilerplate-phase2
-    <form class="search-coin">
-        <input type="text" class="search-bar" placeholder="search coin">
-        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-          </svg></button>
+    <!-- coin search form -->
+    <form class="search-coin my-3">
+        <input id="coin-name" type="text" class="search-bar" placeholder="Search for a coin">
+        <button id="search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+        </button>
     </form>
 
+    <!-- coin information display -->
     <div id="coin-container" class="coin-info">
-
-    <div class="field has-addons search-bar">
-        <div class="control">
-            <input id="searchquery" class="input" type="text" placeholder="Enter coin type">
-        </div>
-        <div id="searchbtn" class="control">
-            <a class="button is-info">
-                Search
-            </a>
-        </div>
+        <h2 id="coin-heading">Name</h2>
+        <p id="coin-price" class="coin-info">Price</p>
     </div>
 
-    <div id="coin-container" class="coin-info"></div>
- main
-    <h2 id="coin-heading">coin name</h2>
-    <p id="coin-price" class="coin-info">
-        Price
-    </p>
-</div>
+    <!-- news container -->
+    <div id="news-container" class="coin-info"></div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/news.js"></script>
 </body>
 
 </html>
