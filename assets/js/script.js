@@ -1,12 +1,15 @@
+
 $("#search-button").on("click", function (event) {
+    // stop the form submitting
     event.preventDefault();
+
     const coinID = $("#coin-name").val();
+
     newsCall(coinID)
     searchCoin(coinID)
 });
 
 function searchCoin(coinID) {
-    console.log("searchCoin");
     const queryURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`;
 
     fetch(queryURL)
@@ -14,6 +17,7 @@ function searchCoin(coinID) {
             return response.json();
         })
         .then(function (data) {
+            // append data to the page
             $("#coin-heading").text(data[0].name);
             $("#coin-price").text(`$ ${data[0].current_price}`);
         })
@@ -29,21 +33,17 @@ function newsCall(coinID) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
+            // process the data before appending
             processData(data);
-            console.log("test")
         })
 };
 
 function processData(data) {
-    console.log("article information")
 
     for (var i = 0; i < 5; i++) {
         var author = data.articles[i].author;
         var title = data.articles[i].title;
         var artUrl = data.articles[i].url;
-
-        console.log(author, title, artUrl)
+        // append goes here
     };
 }
-
