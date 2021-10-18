@@ -12,12 +12,10 @@
 // }
 // ]
 
-//without having the search button, you need to attempt this in the inspect / console. 
-//you need to type in searchCoin('bitcoin')         or any other coin you want to look at 
-//but when its in the search bar it should work 
 
-function searchCoin(coinName) {
-    let requestUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinName}`
+
+function searchCoin(coinID) {
+    let requestUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`
 
     $.ajax({
         url: requestUrl,
@@ -28,7 +26,12 @@ function searchCoin(coinName) {
 
         $("#coin-heading").text(response[0].name);
         $("#coin-price").text(`$ ${response[0].current_price}`);
+        $("#coin-price").text(`$ ${response[0].price_change_percentage_24h}`);
+        $("#coin-price").text(`$ ${response[0].ath}`);
+        $("#coin-price").text(`$ ${response[0].high_24h}`);
+        $("#coin-price").text(`$ ${response[0].low_24h}`);
 
+        console.log(response)
     })
 }
 
