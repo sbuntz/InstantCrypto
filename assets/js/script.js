@@ -5,37 +5,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Get all "navbar-burger" elements
     var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  
+
     // Check if there are any nav burgers
     if ($navbarBurgers.length > 0) {
-  
-      // Add a click event on each of them
-      $navbarBurgers.forEach(function ($el) {
-        $el.addEventListener('click', function () {
-  
-          // Get the target from the "data-target" attribute
-          var target = $el.dataset.target;
-          var $target = document.getElementById(target);
-  
-          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-          $el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-  
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+            $el.addEventListener('click', function () {
+
+                // Get the target from the "data-target" attribute
+                var target = $el.dataset.target;
+                var $target = document.getElementById(target);
+
+                // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                $el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
         });
-      });
     }
-  
-  });
 
-$("#search-button").on("click", function (event) {
-    // stop the form submitting
-    event.preventDefault();
-
-    const coinID = $("#coin-name").val();
-
-    newsCall(coinID)
-    searchCoin(coinID)
 });
+
+
 
 function searchCoin(coinID) {
     const queryURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`;
@@ -47,13 +39,11 @@ function searchCoin(coinID) {
         .then(function (data) {
             // append data to the page
             $("#coin-heading").text(data[0].name);
-            $("#coin-price").text(`$ ${data[0].current_price}`);
-            $("#coin-heading").text(data[0].name);
-            $("#coin-price").text(`$ ${data[0].current_price}`);
-            $("#coin-price").text(`$ ${data[0].price_change_percentage_24h}`);
-            $("#coin-price").text(`$ ${data[0].ath}`);
-            $("#coin-price").text(`$ ${data[0].high_24h}`);
-            $("#coin-price").text(`$ ${data[0].low_24h}`);
+            $("#coin-price").text(data[0].current_price);
+            $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
+            $("#coin-all-time-high").text(data[0].ath);
+            $("#coin-high-24h").text(data[0].high_24h);
+            $("#coin-low-24h").text(data[0].low_24h);
         })
 };
 
@@ -75,10 +65,13 @@ function newsCall(coinID) {
 
 function processData(data) {
 
+    // clear previous news articles
+    $('#news-container').empty()
+
     for (var i = 0; i < 4; i++) {
         // var author = data.articles[i].author;
         var author = data.articles[i].source.name;
-  
+
         var title = data.articles[i].title;
         var articleUrl = data.articles[i].url;
         var imgUrl = data.articles[i].urlToImage;
@@ -97,7 +90,7 @@ function processData(data) {
         authorEl.text(author);
         imageEl.attr('src', imgUrl)
         linkEl.attr('href', articleUrl)
-        
+
         // set link to open in new tab
         linkEl.attr('target', '_blank')
 
@@ -111,3 +104,31 @@ function processData(data) {
 
     };
 }
+
+function saveLastSearch(searchHistory){
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+};
+
+
+// call a default coin on page load
+function init() {
+    const defaultCoin = "bitcoin";
+    newsCall(defaultCoin);
+    searchCoin(defaultCoin);
+};
+
+$(document).ready(function () {
+    init();
+
+    // event listener for search button click
+    $("#search-button").on("click", function (event) {
+        // stop the form submitting
+        event.preventDefault();
+
+        const coinID = $("#coin-name").val();
+
+        saveLastSearch(coinID)
+        newsCall(coinID)
+        searchCoin(coinID)
+    });
+})
