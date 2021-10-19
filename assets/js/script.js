@@ -1,7 +1,7 @@
 // element variables
 const newContainerEL = $('#news-container')
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     // Get all "navbar-burger" elements
     var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if ($navbarBurgers.length > 0) {
 
         // Add a click event on each of them
-        $navbarBurgers.forEach(function ($el) {
-            $el.addEventListener('click', function () {
+        $navbarBurgers.forEach(function($el) {
+            $el.addEventListener('click', function() {
 
                 // Get the target from the "data-target" attribute
                 var target = $el.dataset.target;
@@ -33,11 +33,12 @@ function searchCoin(coinID) {
     const queryURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`;
 
     fetch(queryURL)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
-            // append data to the page
+        .then(function(data) {
+            console.log(data)
+                // append data to the page
             $("#coin-heading").text(data[0].name);
             $("#coin-price").text(data[0].current_price);
             $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
@@ -48,15 +49,28 @@ function searchCoin(coinID) {
 };
 
 
+//create function for autocomplete:
+
+function cryptoName(coinID) {
+    let findName = crypto.find((currencyName) => {
+        if (currencyName.id === coinID || currencyName.name === coinID) {
+            return true
+        }
+        return false
+    })
+    console.log()
+    return findName;
+}
+
 function newsCall(coinID) {
 
     const queryURL = `https://newsapi.org/v2/top-headlines?q=${coinID}&language=en&category=business&apiKey=822c6daf68da47f2aa999e05473aa7bb`;
 
     fetch(queryURL)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
             // process the data before appending
             processData(data);
 
@@ -105,7 +119,7 @@ function processData(data) {
     };
 }
 
-function saveLastSearch(searchHistory){
+function saveLastSearch(searchHistory) {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 };
 
@@ -117,11 +131,11 @@ function init() {
     searchCoin(defaultCoin);
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
     init();
 
     // event listener for search button click
-    $("#search-button").on("click", function (event) {
+    $("#search-button").on("click", function(event) {
         // stop the form submitting
         event.preventDefault();
 
