@@ -105,14 +105,25 @@ function processData(data) {
     };
 }
 
-function saveLastSearch(searchHistory){
+function saveLastSearch(searchHistory) {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 };
 
 
-// call a default coin on page load
+// initialise function
 function init() {
-    const defaultCoin = "bitcoin";
+    // set a default coin on page load
+    let defaultCoin = "bitcoin";
+
+    // get any stored scores
+    const storedSearchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+
+    // if there are stored values, save them to the variable
+    if (storedSearchHistory !== null) {
+        defaultCoin = storedSearchHistory
+    };
+
+    // make the API calls
     newsCall(defaultCoin);
     searchCoin(defaultCoin);
 };
