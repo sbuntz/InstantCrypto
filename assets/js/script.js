@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             });
         });
-    }
-
+    };
 });
 
 
@@ -58,15 +57,11 @@ function searchCoin(coinID) {
                 $("#coin-high-24h").text(data[0].high_24h);
                 $("#coin-low-24h").text(data[0].low_24h);
             };
-
-
-
-        })
+        });
 };
 
 
 function newsCall(coinID) {
-
     const queryURL = `https://newsapi.org/v2/top-headlines?q=${coinID}&language=en&category=business&apiKey=822c6daf68da47f2aa999e05473aa7bb`;
 
     fetch(queryURL)
@@ -77,12 +72,14 @@ function newsCall(coinID) {
             // log the total number of search results
             console.log(data.totalResults)
 
-            // if there are no news articles, exit with console.log
-            if (data.articles.length === 0) { return console.log("no news") }
-
-            // process the data for appending
-            processData(data);
-
+            // if there are no news articles, 
+            if (data.articles.length === 0) {
+                // exit with console.log
+                return console.log("no news")
+            } else {
+                // process the data for appending
+                processData(data);
+            };
         })
 };
 
@@ -126,7 +123,7 @@ function processData(data) {
         newContainerEL.append(tileEL);
 
     };
-}
+};
 
 function saveLastSearch(searchHistory) {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
@@ -147,7 +144,7 @@ function init() {
     };
 
     // make the API calls
-    // newsCall(defaultCoin);
+    newsCall(defaultCoin);
     searchCoin(defaultCoin);
 };
 
@@ -160,11 +157,10 @@ $(document).ready(function () {
         event.preventDefault();
 
         const coinID = $("#coin-name").val().toLowerCase();
-        console.log(coinID)
 
         saveLastSearch(coinID)
-        // newsCall(coinID)
+        newsCall(coinID)
         searchCoin(coinID)
     });
 
-})
+});
