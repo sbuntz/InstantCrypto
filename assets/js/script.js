@@ -142,6 +142,12 @@ function init() {
     searchCoin(defaultCoin);
 };
 
+$( "#coin-name" ).autocomplete({
+    source: coins.map(function(coin){
+        return {label: `${coin.name} (${coin.symbol})`, value: coin.id}
+    })
+  });
+
 $(document).ready(function() {
     init();
 
