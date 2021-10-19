@@ -19,10 +19,7 @@ nav  {
   font-size: 20px;
 }
 
-.navbar-item #coins {
-  color: #4B87AB;
-  font-size: 20px;
-}
+
 
 .navbar-item #coins {
   color: #4B87AB;
@@ -119,10 +116,7 @@ a.navbar-item.is-active {
   justify-content: center;
 }
 
-footer p {
+footer strong, p, a {
   color: #8a8a8a;
 }
 
-footer a {
-  color: #8a8a8a;
-}
