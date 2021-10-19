@@ -37,13 +37,30 @@ function searchCoin(coinID) {
             return response.json();
         })
         .then(function (data) {
-            // append data to the page
-            $("#coin-heading").text(data[0].name);
-            $("#coin-price").text(data[0].current_price);
-            $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
-            $("#coin-all-time-high").text(data[0].ath);
-            $("#coin-high-24h").text(data[0].high_24h);
-            $("#coin-low-24h").text(data[0].low_24h);
+
+            // make sure there is data from the API
+            if (!data[0]) {
+                // if there was no data returned from the API call
+                // search coin.js for coin with name == 'coinID'
+                coins.map(function (coin) {
+                    // if there is a coin with that name
+                    if (coin.name.toLowerCase() == coinID.toLowerCase()) {
+                        // call the API function again, this time with the ID
+                        return searchCoin(coin.id)
+                    };
+                });
+            } else {
+                // append data to the page
+                $("#coin-heading").text(data[0].name);
+                $("#coin-price").text(data[0].current_price);
+                $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
+                $("#coin-all-time-high").text(data[0].ath);
+                $("#coin-high-24h").text(data[0].high_24h);
+                $("#coin-low-24h").text(data[0].low_24h);
+            };
+
+
+
         })
 };
 
@@ -57,7 +74,13 @@ function newsCall(coinID) {
             return response.json();
         })
         .then(function (data) {
-            // process the data before appending
+            // log the total number of search results
+            console.log(data.totalResults)
+
+            // if there are no news articles, exit with console.log
+            if (data.articles.length === 0) { return console.log("no news") }
+
+            // process the data for appending
             processData(data);
 
         })
@@ -124,7 +147,7 @@ function init() {
     };
 
     // make the API calls
-    newsCall(defaultCoin);
+    // newsCall(defaultCoin);
     searchCoin(defaultCoin);
 };
 
@@ -136,10 +159,12 @@ $(document).ready(function () {
         // stop the form submitting
         event.preventDefault();
 
-        const coinID = $("#coin-name").val();
+        const coinID = $("#coin-name").val().toLowerCase();
+        console.log(coinID)
 
         saveLastSearch(coinID)
-        newsCall(coinID)
+        // newsCall(coinID)
         searchCoin(coinID)
     });
+
 })
