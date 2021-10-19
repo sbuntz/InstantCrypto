@@ -27,7 +27,7 @@
 
     <nav class="navbar is-fixed-top">
         <div class="navbar-brand">
-            <a class="navbar-item" href="/index.html">
+            <a class="navbar-item" href="#">
                 <span class="icon-text">
                     <span class="icon">
                         <i class="fas fa-coins" style="color: #4B87AB;"></i>
@@ -63,16 +63,10 @@
         <div id="nav-menu" class="navbar-menu">
             <div class="navbar-start">
                
-                    <a class="navbar-item is-hoverable is-active" href="/index.html">
-                        <span class="icon-text">
-                            <span class="icon">
-                                <i class="fa fa-home"></i>
-                            </span>
-                            <span>Home</span>
-                        </span>
+                    
              
 
-                    <a class="navbar-item is-hoverable is-active" href="#coin-info">
+                    <a class="navbar-item is-hoverable is-active" href="#coin-container">
                         <span class="icon-text">
                             <span class="icon">
                                 <i class="fa fa-search"></i>
@@ -81,7 +75,7 @@
                         </span>
                     </a>
               
-                    <a class="navbar-item is-hoverable is-active" href="#new-info">
+                    <a class="navbar-item is-hoverable is-active" href="#news-container">
                         <span class="icon-text">
                             <span class="icon">
                                 <i class="fa fa-newspaper-o"></i>
@@ -124,14 +118,18 @@
     </form>
 
     <!-- coin information display -->
-    <div class="coin-container" id="coin-info">
-        <p>Coin Price</p>
+    <div id="coin-container" class="coin-info">
+        <h2 id="coin-heading"></h2>
+        <p id="coin-price"></p>
+        <p id="coin-percent-24h"></p>
+        <p id="coin-all-time-high"></p>
+        <p id="coin-high-24h"></p>
+        <p id="coin-low-24h"></p>
+
     </div>
 
     <!-- news container -->
-    <div class="news-container" id="new-info">
-        <p>Coin News</p>
-    </div>
+    <div id="news-container" class="new-info"></div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
