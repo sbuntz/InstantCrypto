@@ -35,18 +35,6 @@ function searchCoin(coinID) {
         .then(function(response) {
             return response.json();
         })
-<<<<<<< HEAD
-        .then(function(data) {
-            console.log(data)
-                // append data to the page
-            $("#coin-heading").text(data[0].name);
-            $("#coin-price").text(data[0].current_price);
-            $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
-            $("#coin-all-time-high").text(data[0].ath);
-            $("#coin-high-24h").text(data[0].high_24h);
-            $("#coin-low-24h").text(data[0].low_24h);
-        })
-=======
         .then(function (data) {
 
             // make sure there is data from the API
@@ -70,7 +58,6 @@ function searchCoin(coinID) {
                 $("#coin-low-24h").text(data[0].low_24h);
             };
         });
->>>>>>> aa8452fceab244dc46cc8f93c32a38db07af96b2
 };
 
 
@@ -94,12 +81,6 @@ function newsCall(coinID) {
         .then(function(response) {
             return response.json();
         })
-<<<<<<< HEAD
-        .then(function(data) {
-            // process the data before appending
-            processData(data);
-
-=======
         .then(function (data) {
             // log the total number of search results
             console.log(data.totalResults)
@@ -112,7 +93,6 @@ function newsCall(coinID) {
                 // process the data for appending
                 processData(data);
             };
->>>>>>> aa8452fceab244dc46cc8f93c32a38db07af96b2
         })
 };
 
@@ -214,9 +194,5 @@ $(document).ready(function() {
         newsCall(coinID)
         searchCoin(coinID)
     });
-<<<<<<< HEAD
-})
-=======
 
 });
->>>>>>> aa8452fceab244dc46cc8f93c32a38db07af96b2
