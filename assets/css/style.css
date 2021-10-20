@@ -36,7 +36,7 @@ a.navbar-item.is-active {
   align-items: flex-end;
   cursor: pointer;
   justify-content: center;
-  margin: 15px;
+  margin: 15px 15px 30px 15px;
 }
 
 .search-bar {
@@ -114,7 +114,46 @@ input:-webkit-autofill{
   -webkit-text-fill-color: #8a8a8a !important;
 }
 
+#coin-heading {
+  font-size: 40px;
+  color: #4a4a4a;
+  padding: 0;
+
+}
+
+#coin-price {
+  font-size: 40px;
+  color: #4a4a4a;
+}
+
+.price {
+  font-size: 30px;
+  color: #5c5c5c;
+}
+
+.coin-info {
+  font-size: 15px;
+}
 
 .tile {
  margin: auto;
 }
+
+.tile img {
+  vertical-align: middle;
+  margin: 1px 1px 1px 1px;
+  padding: 0;
+ }
+
+ .tile.is-parent {
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+
+
+ .tile.is-child.box  {
+  padding: 0;
+  margin: auto!important;
+  vertical-align: middle;
+ }

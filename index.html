@@ -99,6 +99,8 @@
 
     <body>
 
+
+
         <div class="box">
             <p class="has-text-centered">
                 Probably some sort of explanation
@@ -107,7 +109,7 @@
         <form class="search-coin">
             <input id="coin-name" type="text" class="search-bar" placeholder="Search for a coin">
             <button id="search-button">
-    
+
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
                     <path
@@ -118,32 +120,32 @@
 
         <section class="info-tiles">
             <div class="tile is-ancestor has-text-centered">
-                <div class="tile is-parent is-2"> </div>
-                <div class="tile is-parent is-2">
+                <div class="tile is-parent is-3">
+                    
+                </div>
+                <div class="tile is-parent is-3" id = "title-box">
                     <article class="tile is-child box">
-                        <p class="title" id = "coin-heading"></p>
-                        <p class="title" id = "coin-price">Current Price</p> 
-                        <p class="subtitle">Current Price</p>
+                        <p  id="coin-heading"></p>    
                     </article>
-                </div> 
+                </div>
                 <div class="tile is-parent is-vertical is-2">
                     <article class="tile is-child box">
-                        <p class="title" id = "coin-percent-24h" ></p>
-                        <p class="subtitle">24hr % change</p>
+                        <p class="price" id="coin-percent-24h"></p>
+                        <p class="coin-info">24hr % change</p>
                     </article>
                     <article class="tile is-child box">
-                        <p class="title"  id = "coin-high-24h"></p>
-                        <p class="subtitle">24hrs high</p>
+                        <p class="price" id="coin-high-24h"></p>
+                        <p class="coin-info">24hrs high</p>
                     </article>
-                </div> 
+                </div>
                 <div class="tile is-parent is-vertical is-2">
                     <article class="tile is-child box">
-                        <p class="title"  id = "coin-all-time-high"></p>
-                        <p class="subtitle">all time high</p>
+                        <p class="price" id="coin-all-time-high"></p>
+                        <p class="coin-info">all time high</p>
                     </article>
                     <article class="tile is-child box">
-                        <p class="title"  id = "coin-low-24h"></p>
-                        <p class="subtitle">24hrs low</p>
+                        <p class="price" id="coin-low-24h"></p>
+                        <p class="coin-info">24hrs low</p>
                     </article>
                 </div>
                 <div class="tile is-parent is-2"> </div>
@@ -152,116 +154,116 @@
 
         <br><br>
 
- <!-- news container -->
-     <section class="container">
-        <div id="coin-container" class="coin-info">
-            <div class="columns features">
-                <div class="column is-4">
-                    <div class="card is-shady">
-                        <div class="card-image">
-                            <figure class="image">
-                                <a id="news-url_0" target="_blank">
-                                    <img id="news-image_0">
-                                </a>
-                            </figure>
+        <!-- news container -->
+        <section class="container">
+            <div id="coin-container" class="coin-info">
+                <div class="columns features">
+                    <div class="column is-4">
+                        <div class="card is-shady">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <a id="news-url_0" target="_blank">
+                                        <img id="news-image_0">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 id="news-title_0"></h4>
+                                    <p id="news-description_0"></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h4 id="news-title_0"></h4>
-                                <p id="news-description_0"></p>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card is-shady">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <a id="news-url_1" target="_blank">
+                                        <img id="news-image_1">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 id="news-title_1"></h4>
+                                    <p id="news-description_1"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card is-shady">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <a id="news-url_2" target="_blank">
+                                        <img id="news-image_2">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 id="news-title_2"></h4>
+                                    <p id="news-description_2"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column is-4">
-                    <div class="card is-shady">
-                        <div class="card-image">
-                            <figure class="image">
-                                <a id="news-url_1" target="_blank">
-                                    <img id="news-image_1">
-                                </a>
-                            </figure>
+                <div class="columns features">
+                    <div class="column is-4">
+                        <div class="card is-shady">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <a id="news-url_3" target="_blank">
+                                        <img id="news-image_3">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 id="news-title_3"></h4>
+                                    <p id="news-description_3"></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h4 id="news-title_1"></h4>
-                                <p id="news-description_1"></p>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card is-shady">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <a id="news-url_4" target="_blank">
+                                        <img id="news-image_4">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 id="news-title_4"></h4>
+                                    <p id="news-description_4"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card is-shady">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <a id="news-url_5" target="_blank">
+                                        <img id="news-image_5">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content is-fullheight">
+                                    <h4 id="news-title_5"></h4>
+                                    <p id="news-description_5"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column is-4">
-                    <div class="card is-shady">
-                        <div class="card-image">
-                            <figure class="image">
-                                <a id="news-url_2" target="_blank">
-                                    <img id="news-image_2">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h4 id="news-title_2"></h4>
-                                <p id="news-description_2"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
             </div>
-            <div class="columns features">
-                <div class="column is-4">
-                    <div class="card is-shady">
-                        <div class="card-image">
-                            <figure class="image">
-                                <a id="news-url_3" target="_blank">
-                                    <img id="news-image_3">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h4 id="news-title_3"></h4>
-                                <p id="news-description_3"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <div class="card is-shady">
-                        <div class="card-image">
-                            <figure class="image">
-                                <a id="news-url_4" target="_blank">
-                                    <img id="news-image_4">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h4 id="news-title_4"></h4>
-                                <p id="news-description_4"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <div class="card is-shady">
-                        <div class="card-image">
-                            <figure class="image">
-                                <a id="news-url_5" target="_blank">
-                                    <img id="news-image_5">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="content is-fullheight">
-                                <h4 id="news-title_5"></h4>
-                                <p id="news-description_5"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-            </div>
-        </div>
         </section>
 
         <footer class="footer">
@@ -280,9 +282,11 @@
         </footer>
 
         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <!-- JQuery UI -->
-        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+            integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
         <!-- Custom JS -->
         <script src="assets/js/all-coins.js"></script>
         <script src="assets/js/top-coins.js"></script>

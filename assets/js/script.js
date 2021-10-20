@@ -26,11 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
-function limit (string = '', limit = 0) {  
-    return string.substring(0, limit)
-  }
-  
-
 
 function searchCoin(coinID) {
     const queryURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`;
@@ -54,12 +49,16 @@ function searchCoin(coinID) {
                 });
             } else {
                 // append data to the page
-                $("#coin-heading").text(data[0].name);
-                $("#coin-price").text(data[0].current_price);
-                $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
-                $("#coin-all-time-high").text(data[0].ath);
-                $("#coin-high-24h").text(data[0].high_24h);
-                $("#coin-low-24h").text(data[0].low_24h);
+                $("#coin-heading").text(data[0].name + "   $"+data[0].current_price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                $("#coin-price_2").text("A$"+data[0].current_price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                $("#coin-percent-24h").text(data[0].price_change_percentage_24h.toFixed(2)+"%");
+                $("#coin-all-time-high").text("$"+data[0].ath.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                $("#coin-high-24h").text("$"+data[0].high_24h.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                $("#coin-low-24h").text("$"+data[0].low_24h.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                $("#coin-image").attr('src', data[0].image); 
+                     
+                  
+                  
             };
         });
 };
@@ -102,7 +101,8 @@ function newsCall(coinID) {
                     $("#news-url_"+i).attr('href', data.data[i].url);
                     $("#news-image_"+i).attr('src', data.data[i].image); 
                     $("#news-country_"+i).text(data.data[i].country);
-                    $("#news-description_"+i).text(data.data[i].description);     
+                    $("#news-description_"+i).text(data.data[i].description);   
+                      
                   }
             };
                 
