@@ -105,7 +105,7 @@ function newsCall(coinID) {
                     $("#news-description_"+i).text(data.data[i].description);     
                   }
             };
-                
+            console.log('test')
         });
 };
 
