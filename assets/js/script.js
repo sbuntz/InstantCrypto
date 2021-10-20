@@ -1,7 +1,7 @@
 // element variables
 const newContainerEL = $('#news-container')
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     // Get all "navbar-burger" elements
     var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if ($navbarBurgers.length > 0) {
 
         // Add a click event on each of them
-        $navbarBurgers.forEach(function ($el) {
-            $el.addEventListener('click', function () {
+        $navbarBurgers.forEach(function($el) {
+            $el.addEventListener('click', function() {
 
                 // Get the target from the "data-target" attribute
                 var target = $el.dataset.target;
@@ -36,7 +36,7 @@ function searchCoin(coinID) {
     const queryURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&ids=${coinID}`;
 
     fetch(queryURL)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
         .then(function (data) {
@@ -63,6 +63,20 @@ function searchCoin(coinID) {
             };
         });
 };
+
+
+//create function for autocomplete:
+
+function cryptoName(coinID) {
+    let findName = crypto.find((currencyName) => {
+        if (currencyName.id === coinID || currencyName.name === coinID) {
+            return true
+        }
+        return false
+    })
+    console.log()
+    return findName;
+}
 
 //http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&categories=business&countries=au,us
 function newsCall(coinID) {
@@ -119,11 +133,21 @@ function init() {
     searchCoin(defaultCoin);
 };
 
-$(document).ready(function () {
+// search bar autocomplete function
+$("#coin-name").autocomplete({
+    source: topCoins.map(function(coin) {
+        // display the coin name and symbol, but return the coin ID
+        return { label: `${coin.name} (${coin.symbol})`, value: coin.id }
+    })
+});
+
+
+
+$(document).ready(function() {
     init();
 
     // event listener for search button click
-    $("#search-button").on("click", function (event) {
+    $("#search-button").on("click", function(event) {
         // stop the form submitting
         event.preventDefault();
 
@@ -132,7 +156,9 @@ $(document).ready(function () {
         saveLastSearch(coinID)
         newsCall(coinID)
         searchCoin(coinID)
+
+        // clear input field
+        $("#coin-name").val("")
     });
 
 });
-
