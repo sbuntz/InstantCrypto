@@ -17,7 +17,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>BitChange | Crypto Currency Search</title>
+    <title>InstantCrypto | Crypto Currency Search</title>
 
 </head>
 
@@ -32,10 +32,7 @@
                     <span class="icon">
                         <i class="fas fa-coins" style="color: #4B87AB;"></i>
                     </span>
-                <h4>BitChange</h4>
-                </span>
-
-
+                    <h4>InstantCrypto</h4>
             </a>
 
             <a class="navbar-item is-hidden-desktop" href="https://github.com/sbuntz/Project-1" target="_blank">
@@ -44,7 +41,9 @@
                 </span>
             </a>
 
-            <a class="navbar-item is-hidden-desktop" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bitchange.com" href="https://twitter.com/intent/tweet?text=BitChange: a new way to search Crypto&hashtags=BitChange&url=http://bitchange.com"
+            <a class="navbar-item is-hidden-desktop" data-social-network="Twitter" data-social-action="tweet"
+                data-social-target="http://bitchange.com"
+                href="https://twitter.com/intent/tweet?text=BitChange: a new way to search Crypto&hashtags=BitChange&url=http://bitchange.com"
                 target="_blank">
                 <span class="icon" style="color: #55acee;">
                     <i class="fa fa-twitter"></i>
@@ -60,36 +59,35 @@
 
         <div id="nav-menu" class="navbar-menu">
             <div class="navbar-start">
-
-
-
-
                 <a class="navbar-item is-hoverable is-active" href="#coin-container">
                     <span class="icon-text">
-                            <span class="icon">
-                                <i class="fa fa-search"></i>
-                            </span>
-                    <span>Crypto Search</span>
+                        <span class="icon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <span>Crypto Search</span>
                     </span>
                 </a>
 
                 <a class="navbar-item is-hoverable is-active" href="#news-container">
-                    <span class="icon-text">
-                            <span class="icon">
-                                <i class="fa fa-newspaper-o"></i>
-                            </span>
+                    <span class="icon-text"></span>
+                    <span class="icon">
+                        <i class="fa fa-newspaper-o"></i>
+                    </span>
                     <span>News</span>
                     </span>
                 </a>
             </div>
 
             <div class="navbar-end">
-                <a class="navbar-item is-hidden-desktop-only" href="https://github.com/sbuntz/Project-1" target="_blank">
+                <a class="navbar-item is-hidden-desktop-only" href="https://github.com/sbuntz/Project-1"
+                    target="_blank">
                     <span class="icon" style="color: #8a8a8a;">
                         <i class="fa fa-github"></i>
                     </span>
                 </a>
-                <a class="navbar-item is-hidden-desktop-only" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bitchange.com" href="https://twitter.com/intent/tweet?text=BitChange: a new way to search Crypto&hashtags=BitChange&url=http://bitchange.com"
+                <a class="navbar-item is-hidden-desktop-only" data-social-network="Twitter" data-social-action="tweet"
+                    data-social-target="http://bitchange.com"
+                    href="https://twitter.com/intent/tweet?text=BitChange: a new way to search Crypto&hashtags=BitChange&url=http://bitchange.com"
                     target="_blank">
                     <span class="icon" style="color: #55acee;">
                         <i class="fa fa-twitter"></i>
@@ -99,53 +97,197 @@
         </div>
     </nav>
 
+    <body>
 
-    <!-- coin search form -->
-    <form class="search-coin my-3">
-        <input id="coin-name" type="text" class="search-bar" placeholder="Search for a coin">
-        <button id="search-button">
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                viewBox="0 0 16 16">
-                <path
-                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-        </button>
-    </form>
-
-    <!-- coin information display -->
-    <div id="coin-container" class="coin-info">
-        <h2 id="coin-heading"></h2>
-        <p id="coin-price"></p>
-        <p id="coin-percent-24h"></p>
-        <p id="coin-all-time-high"></p>
-        <p id="coin-high-24h"></p>
-        <p id="coin-low-24h"></p>
-
-    </div>
-
-    <!-- news container -->
-    <div id="news-container" class="new-info"></div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- JQuery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/coin.js"></script>
-    <script src="assets/js/topcoins.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>
-            <strong>BitChange</strong>
-            <p> <a href="https://github.com/stbuntz"> Stefanie Buntz </a> | <a href="https://github.com/josephdaw"> Joseph Daw </a> |
-                <a href="https://github.com/mjhwest"> Michael West </a> | <a href="https://github.com/gurtej154"> Gurtej Thandi </a>
+        <div class="box">
+            <p class="has-text-centered">
+                Probably some sort of explanation
             </p>
-        </p>
-    </div>
-</footer>
+        </div>
+        <form class="search-coin">
+            <input id="coin-name" type="text" class="search-bar" placeholder="Search for a coin">
+            <button id="search-button">
+    
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </button>
+        </form>
+
+        <section class="info-tiles">
+            <div class="tile is-ancestor has-text-centered">
+                <div class="tile is-parent is-2"> </div>
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child box">
+                        <p class="title" id = "coin-heading"></p>
+                        <p class="title" id = "coin-price">Current Price</p> 
+                        <p class="subtitle">Current Price</p>
+                    </article>
+                </div> 
+                <div class="tile is-parent is-vertical is-2">
+                    <article class="tile is-child box">
+                        <p class="title" id = "coin-percent-24h" ></p>
+                        <p class="subtitle">24hr % change</p>
+                    </article>
+                    <article class="tile is-child box">
+                        <p class="title"  id = "coin-high-24h"></p>
+                        <p class="subtitle">24hrs high</p>
+                    </article>
+                </div> 
+                <div class="tile is-parent is-vertical is-2">
+                    <article class="tile is-child box">
+                        <p class="title"  id = "coin-all-time-high"></p>
+                        <p class="subtitle">all time high</p>
+                    </article>
+                    <article class="tile is-child box">
+                        <p class="title"  id = "coin-low-24h"></p>
+                        <p class="subtitle">24hrs low</p>
+                    </article>
+                </div>
+                <div class="tile is-parent is-2"> </div>
+            </div>
+        </section>
+
+        <br><br>
+
+ <!-- news container -->
+     <section class="container">
+        <div id="coin-container" class="coin-info">
+            <div class="columns features">
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image">
+                                <a id="news-url_0" target="_blank">
+                                    <img id="news-image_0">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 id="news-title_0"></h4>
+                                <p id="news-description_0"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image">
+                                <a id="news-url_1" target="_blank">
+                                    <img id="news-image_1">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 id="news-title_1"></h4>
+                                <p id="news-description_1"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image">
+                                <a id="news-url_2" target="_blank">
+                                    <img id="news-image_2">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 id="news-title_2"></h4>
+                                <p id="news-description_2"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+            <div class="columns features">
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image">
+                                <a id="news-url_3" target="_blank">
+                                    <img id="news-image_3">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 id="news-title_3"></h4>
+                                <p id="news-description_3"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image">
+                                <a id="news-url_4" target="_blank">
+                                    <img id="news-image_4">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 id="news-title_4"></h4>
+                                <p id="news-description_4"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image">
+                                <a id="news-url_5" target="_blank">
+                                    <img id="news-image_5">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content is-fullheight">
+                                <h4 id="news-title_5"></h4>
+                                <p id="news-description_5"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        </section>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>InstantCrypto</strong>
+                    <p> <a href="https://github.com/stbuntz"> Stefanie Buntz </a> | <a
+                            href="https://github.com/josephdaw">
+                            Joseph Daw </a> |
+                        <a href="https://github.com/mjhwest"> Michael West </a> | <a
+                            href="https://github.com/gurtej154">
+                            Gurtej Thandi </a>
+                    </p>
+                </p>
+            </div>
+        </footer>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- JQuery UI -->
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+        <!-- Custom JS -->
+        <script src="assets/js/all-coins.js"></script>
+        <script src="assets/js/top-coins.js"></script>
+        <script src="assets/js/script.js"></script>
+
+    </body>
 
 </html>

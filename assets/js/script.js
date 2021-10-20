@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
+function limit (string = '', limit = 0) {  
+    return string.substring(0, limit)
+  }
+  
 
 
 function searchCoin(coinID) {
@@ -74,69 +78,37 @@ function cryptoName(coinID) {
     return findName;
 }
 
+//http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&categories=business&countries=au,us
 function newsCall(coinID) {
-    const queryURL = `https://newsapi.org/v2/top-headlines?q=${coinID}&language=en&category=business&apiKey=822c6daf68da47f2aa999e05473aa7bb`;
+    const queryURL = `http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&keywords=${coinID}&categories=business&countries=au,us`;
 
     fetch(queryURL)
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             // log the total number of search results
-            console.log(data.totalResults)
+            console.log(data)
 
             // if there are no news articles, 
-            if (data.articles.length === 0) {
+            if (!data.data[0]) {
                 // exit with console.log
                 return console.log("no news")
             } else {
                 // process the data for appending
-                processData(data);
+                for(var i = 0; i < 6; i++) {
+                    $("#news-title_"+i).text(data.data[i].title);
+                    $("#news-author_"+i).text(data.data[i].author);                  
+                    $("#news-url_"+i).attr('href', data.data[i].url);
+                    $("#news-image_"+i).attr('src', data.data[i].image); 
+                    $("#news-country_"+i).text(data.data[i].country);
+                    $("#news-description_"+i).text(data.data[i].description);     
+                  }
             };
-        })
+                
+        });
 };
 
-function processData(data) {
-
-    // clear previous news articles
-    $('#news-container').empty()
-
-    for (var i = 0; i < 4; i++) {
-        // var author = data.articles[i].author;
-        var author = data.articles[i].source.name;
-
-        var title = data.articles[i].title;
-        var articleUrl = data.articles[i].url;
-        var imgUrl = data.articles[i].urlToImage;
-
-        // append goes here
-        const tileEL = $('<div class="tile is-parent">');
-        const articleEL = $('<article class="tile is-child box">');
-        const titleEl = $('<h2 class="subtitle">');
-        const authorEl = $('<p class="subtitle">');
-        const linkEl = $('<a>');
-        const imageEl = $('<img src="" alt="">');
-
-
-        // display date, description, and icon
-        titleEl.text(title)
-        authorEl.text(author);
-        imageEl.attr('src', imgUrl)
-        linkEl.attr('href', articleUrl)
-
-        // set link to open in new tab
-        linkEl.attr('target', '_blank')
-
-        // put image inside link
-        linkEl.append(imageEl)
-
-        // add elements to the page
-        articleEL.append(titleEl, authorEl, linkEl);
-        tileEL.append(articleEL);
-        newContainerEL.append(tileEL);
-
-    };
-};
 
 function saveLastSearch(searchHistory) {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
@@ -161,23 +133,14 @@ function init() {
     searchCoin(defaultCoin);
 };
 
-// $("#coin-name").autocomplete({
-//     source: coins.map(function(coin) {
-//         return { label: `${coin.name} (${coin.symbol})`, value: coin.id }
-//     })
-// });
-
-// $("#coin-name").autocomplete({
-//     source: coins.map(function(coin) {
-//         return { label: `${coin.name}`, value: coin.id }
-//     })
-// });
-
-
-//hard code autocomplete//
+// search bar autocomplete function
 $("#coin-name").autocomplete({
-    source: topCoins
+    source: topCoins.map(function(coin) {
+        // display the coin name and symbol, but return the coin ID
+        return { label: `${coin.name} (${coin.symbol})`, value: coin.id }
+    })
 });
+
 
 
 $(document).ready(function() {
@@ -193,6 +156,9 @@ $(document).ready(function() {
         saveLastSearch(coinID)
         newsCall(coinID)
         searchCoin(coinID)
+
+        // clear input field
+        $("#coin-name").val("")
     });
 
 });
