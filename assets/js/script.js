@@ -156,6 +156,9 @@ $(document).ready(function() {
         saveLastSearch(coinID)
         newsCall(coinID)
         searchCoin(coinID)
+
+        // clear input field
+        $("#coin-name").val("")
     });
 
 });
