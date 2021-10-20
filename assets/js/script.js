@@ -133,23 +133,14 @@ function init() {
     searchCoin(defaultCoin);
 };
 
-// $("#coin-name").autocomplete({
-//     source: coins.map(function(coin) {
-//         return { label: `${coin.name} (${coin.symbol})`, value: coin.id }
-//     })
-// });
-
-// $("#coin-name").autocomplete({
-//     source: coins.map(function(coin) {
-//         return { label: `${coin.name}`, value: coin.id }
-//     })
-// });
-
-
-//hard code autocomplete//
+// search bar autocomplete function
 $("#coin-name").autocomplete({
-    source: topCoins
+    source: topCoins.map(function(coin) {
+        // display the coin name and symbol, but return the coin ID
+        return { label: `${coin.name} (${coin.symbol})`, value: coin.id }
+    })
 });
+
 
 
 $(document).ready(function() {
