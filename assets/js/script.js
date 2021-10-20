@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             });
         });
-    }
-
+    };
 });
 
 function limit (string = '', limit = 0) {  
@@ -41,19 +40,32 @@ function searchCoin(coinID) {
             return response.json();
         })
         .then(function (data) {
-            // append data to the page
-            $("#coin-heading").text(data[0].name);
-            $("#coin-price").text(data[0].current_price);
-            $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
-            $("#coin-all-time-high").text(data[0].ath);
-            $("#coin-high-24h").text(data[0].high_24h);
-            $("#coin-low-24h").text(data[0].low_24h);
-        })
+
+            // make sure there is data from the API
+            if (!data[0]) {
+                // if there was no data returned from the API call
+                // search coin.js for coin with name == 'coinID'
+                coins.map(function (coin) {
+                    // if there is a coin with that name
+                    if (coin.name.toLowerCase() == coinID.toLowerCase()) {
+                        // call the API function again, this time with the ID
+                        return searchCoin(coin.id)
+                    };
+                });
+            } else {
+                // append data to the page
+                $("#coin-heading").text(data[0].name);
+                $("#coin-price").text(data[0].current_price);
+                $("#coin-percent-24h").text(data[0].price_change_percentage_24h);
+                $("#coin-all-time-high").text(data[0].ath);
+                $("#coin-high-24h").text(data[0].high_24h);
+                $("#coin-low-24h").text(data[0].low_24h);
+            };
+        });
 };
 
 //http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&categories=business&countries=au,us
 function newsCall(coinID) {
-
     const queryURL = `http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&keywords=${coinID}&categories=business&countries=au,us`;
 
     fetch(queryURL)
@@ -61,7 +73,15 @@ function newsCall(coinID) {
             return response.json();
         })
         .then(function (data) {
-           //     console.log(data)
+            // log the total number of search results
+            console.log(data)
+
+            // if there are no news articles, 
+            if (!data.data[0]) {
+                // exit with console.log
+                return console.log("no news")
+            } else {
+                // process the data for appending
                 for(var i = 0; i < 6; i++) {
                     $("#news-title_"+i).text(data.data[i].title);
                     $("#news-author_"+i).text(data.data[i].author);                  
@@ -69,22 +89,32 @@ function newsCall(coinID) {
                     $("#news-image_"+i).attr('src', data.data[i].image); 
                     $("#news-country_"+i).text(data.data[i].country);
                     $("#news-description_"+i).text(data.data[i].description);     
-                
-                
                   }
-        })
+            };
+                
+        });
 };
 
 
-
-function saveLastSearch(searchHistory){
+function saveLastSearch(searchHistory) {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 };
 
 
-// call a default coin on page load
+// initialise function
 function init() {
-    const defaultCoin = "bitcoin";
+    // set a default coin on page load
+    let defaultCoin = "bitcoin";
+
+    // get any stored scores
+    const storedSearchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+
+    // if there are stored values, save them to the variable
+    if (storedSearchHistory !== null) {
+        defaultCoin = storedSearchHistory
+    };
+
+    // make the API calls
     newsCall(defaultCoin);
     searchCoin(defaultCoin);
 };
@@ -97,15 +127,12 @@ $(document).ready(function () {
         // stop the form submitting
         event.preventDefault();
 
-        const coinID = $("#coin-name").val();
+        const coinID = $("#coin-name").val().toLowerCase();
 
         saveLastSearch(coinID)
         newsCall(coinID)
         searchCoin(coinID)
     });
-})
 
-
-
-
+});
 
