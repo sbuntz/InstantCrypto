@@ -1,5 +1,4 @@
-// element variables
-const newContainerEL = $('#news-container')
+//navbar burger menu 
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -57,9 +56,10 @@ function searchCoin(coinID) {
                 $("#coin-high-24h").text("$"+data[0].high_24h.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
                 $("#coin-low-24h").text("$"+data[0].low_24h.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
                 $("#coin-image").attr('src', data[0].image); 
-                     
+                
+                
                   
-                  
+                percentChange(data[0].price_change_percentage_24h);    
             };
         });
 };
@@ -80,10 +80,9 @@ function percentChange(priceChange) {
 
 }
 
-percentChange();
+
 
 //create function for autocomplete:
-
 function cryptoName(coinID) {
     let findName = crypto.find((currencyName) => {
         if (currencyName.id === coinID || currencyName.name === coinID) {
@@ -91,11 +90,9 @@ function cryptoName(coinID) {
         }
         return false
     })
-    console.log()
     return findName;
 }
 
-//http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&categories=business&countries=au,us
 function newsCall(coinID) {
     const queryURL = `https://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&keywords=${coinID}&categories=business&countries=au,us`;
 
@@ -104,15 +101,10 @@ function newsCall(coinID) {
             return response.json();
         })
         .then(function (data) {
-            // log the total number of search results
-            //console.log(data)
 
-            // if there are no news articles, 
             if (!data.data[0]) {
-                // exit with console.log
                 return console.log("no news")
             } else {
-                // process the data for appending
                 for(var i = 0; i < 6; i++) {
                     $("#news-title_"+i).text(data.data[i].title);
                     $("#news-author_"+i).text(data.data[i].author);                  
