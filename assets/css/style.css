@@ -139,7 +139,7 @@ input:-webkit-autofill {
 
 .card-content .content h4 {
   height: 4rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #5e6164;
   overflow: hidden;
@@ -147,7 +147,7 @@ input:-webkit-autofill {
 }
 
 .card-content .content p {
-  height: 2rem;
+  height: 2.5rem;
   font-size: 0.8rem;
   font-weight: 500;
   color: #5e6164; 
@@ -206,6 +206,7 @@ input:-webkit-autofill {
 
 footer {
   margin-top: 1rem;
+  font-size: 60%;
 }
 
 footer p,
