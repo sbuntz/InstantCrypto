@@ -8,7 +8,6 @@ body {
 }
 
 nav.navbar {
-
   height: 4rem;
   margin-bottom: 1rem;
   box-shadow: 0 0 0.8rem 0.8rem rgba(129, 129, 129, 0.05);
@@ -23,8 +22,7 @@ nav.navbar {
 }
 
 #info-section {
-
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: #8a8a8a;
 }
 
@@ -56,7 +54,6 @@ nav.navbar {
 }
 
 button {
-
   margin: 0.2em;
   border-radius: 50%;
   border: none;
@@ -137,25 +134,21 @@ input:-webkit-autofill {
 }
 
 .card-content .content h4 {
-    height: 4rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #5e6164;
-    overflow: hidden;
-    text-overflow: "----";
+  height: 4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5e6164;
+  overflow: hidden;
+  text-overflow: "----"; 
 }
 
 .card-content .content p {
-  height: 2rem;
+  height: 2.5rem;
   font-size: 0.8rem;
   font-weight: 500;
   color: #5e6164; 
   overflow: hidden;
   text-overflow: "----"; 
-}
-
-#coin-box {
-  padding-top: 0.25rem;
 }
 
 #coin-image {
@@ -207,17 +200,16 @@ input:-webkit-autofill {
 }
 
 footer {
-    margin-top: 1rem;
+  margin-top: 1rem;
+  font-size: 60%;
 }
 
-
-footer p, a, strong {
+footer p, a strong {
   color: #757575;
 }
 
 footer p, a {
-    color: #8a8a8a;
-  font-size: 60%;
+  color: #8a8a8a;
 }
 
 .decrease {
