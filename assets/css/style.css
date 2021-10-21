@@ -8,13 +8,14 @@ body {
 }
 
 nav.navbar {
-    height: 5rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 0.8rem 0.8rem rgba(129, 129, 129, 0.05);
+
+  height: 4rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 0.8rem 0.8rem rgba(129, 129, 129, 0.05);
 }
 
 #logo-title {
-    color: #4B87AB;
+  color: #1765b3;
 }
 
 #nav-menu span {
@@ -22,19 +23,30 @@ nav.navbar {
 }
 
 #info-section {
-    margin-top: 5rem;
-    color: #8a8a8a;
+
+  margin-top: 3rem;
+  color: #8a8a8a;
+}
+
+#ui-id-1 {
+  background-color: #fdfcfcf5;
+  width: 15rem;
+  border-radius: 5%;
+  height: auto;
+  overflow: hidden;
+  padding-left: 1rem;
+  font-size: 1.2rem;
 }
 
 .search-coin {
-    text-align: center;
-    display: flex;
-    align-items: flex-end;
-    cursor: pointer;
-    justify-content: center;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+  font-size: 1.1rem;
 }
 
 .search-bar {
@@ -44,16 +56,17 @@ nav.navbar {
 }
 
 button {
-    margin: 0.5em;
-    border-radius: 50%;
-    border: none;
-    height: 33px;
-    width: 33px;
-    outline: none;
-    background: #7c7c7c2b;
-    color: #8a8a8a;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+
+  margin: 0.2em;
+  border-radius: 50%;
+  border: none;
+  height: 33px;
+  width: 33px;
+  outline: none;
+  background: #7c7c7c2b;
+  color: #8a8a8a;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 input.search-bar {
@@ -133,12 +146,16 @@ input:-webkit-autofill {
 }
 
 .card-content .content p {
-    height: 8rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #5e6164;
-    overflow: hidden;
-    text-overflow: "----";
+  height: 2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5e6164; 
+  overflow: hidden;
+  text-overflow: "----"; 
+}
+
+#coin-box {
+  padding-top: 0.25rem;
 }
 
 #coin-image {
@@ -181,27 +198,26 @@ input:-webkit-autofill {
 }
 
 .is-shady {
-    background: #fff;
-    box-shadow: rgba(0, 0, 0, .4) 0 1px 0;
-    border-radius: 4px;
-    display: inline-block;
-    margin: 10px;
-    position: relative;
-    box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+  border-radius: 4px;
+  margin: 10px;
+  position: relative;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
 }
 
 footer {
     margin-top: 1rem;
 }
 
-footer p,
-a {
-    color: #757575;
+
+footer p, a, strong {
+  color: #757575;
 }
 
-footer p,
-a {
+footer p, a {
     color: #8a8a8a;
+  font-size: 60%;
 }
 
 .decrease {
@@ -210,4 +226,8 @@ a {
 
 .increase {
     background: rgba(63, 231, 0, .26)
+}
+
+.ui-helper-hidden-accessible {
+  display: none !important;
 }
