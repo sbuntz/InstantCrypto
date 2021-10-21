@@ -80,7 +80,7 @@ function cryptoName(coinID) {
 
 //http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&categories=business&countries=au,us
 function newsCall(coinID) {
-    const queryURL = `http://api.mediastack.com/v1/news?access_key=a626b109f9191a2796d483deac47f740&keywords=${coinID}&categories=business&countries=au,us`;
+    const queryURL = `http://api.mediastack.com/v1/news?access_key=77120c571d11ab921b880ec13a9fc2c6&keywords=${coinID}&categories=business&countries=au,us`;
 
     fetch(queryURL)
         .then(function (response) {

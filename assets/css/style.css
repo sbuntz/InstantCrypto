@@ -14,7 +14,7 @@ nav.navbar {
 }
 
 #logo-title {
-  color: #4B87AB;
+  color: #1765b3;
 }
 
 #nav-menu span {
@@ -22,7 +22,7 @@ nav.navbar {
 }
 
 #info-section {
-  margin-top: 5rem;
+  margin-top: 3rem;
   color: #8a8a8a;
 }
 
@@ -43,7 +43,7 @@ nav.navbar {
   cursor: pointer;
   justify-content: center;
   margin-top: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.1rem;
   font-size: 1.1rem;
 }
 
@@ -54,7 +54,7 @@ nav.navbar {
 }
 
 button {
-  margin: 0.5em;
+  margin: 0.2em;
   border-radius: 50%;
   border: none;
   height: 33px;
@@ -147,7 +147,7 @@ input:-webkit-autofill {
 }
 
 .card-content .content p {
-  height: 8rem;
+  height: 2rem;
   font-size: 0.8rem;
   font-weight: 500;
   color: #5e6164; 
@@ -155,6 +155,9 @@ input:-webkit-autofill {
   text-overflow: "----"; 
 }
 
+#coin-box {
+  padding-top: 0.25rem;
+}
 
 #coin-image {
   display: inline;
@@ -208,12 +211,16 @@ footer {
   margin-top: 1rem;
 }
 
-footer p,
-a {
+footer p, a, strong {
   color: #757575;
 }
 
 footer p,
 a {
   color: #8a8a8a;
+  font-size: 60%;
+}
+
+.ui-helper-hidden-accessible {
+  display: none !important;
 }
