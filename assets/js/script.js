@@ -49,8 +49,9 @@ function searchCoin(coinID) {
                 });
             } else {
                 // append data to the page
-                $("#coin-heading").text(data[0].name + "   $"+data[0].current_price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
-                $("#coin-price_2").text("A$"+data[0].current_price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                $("#coin-heading").text(data[0].name);
+                $("#coin-price").text("$"+data[0].current_price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+                $("#coin-price_2").text("AUD$"+data[0].current_price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
                 $("#coin-percent-24h").text(data[0].price_change_percentage_24h.toFixed(2)+"%");
                 $("#coin-all-time-high").text("$"+data[0].ath.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
                 $("#coin-high-24h").text("$"+data[0].high_24h.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
