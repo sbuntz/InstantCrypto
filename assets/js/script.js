@@ -34,13 +34,13 @@ function searchCoin(coinID) {
         .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
 
             // make sure there is data from the API
             if (!data[0]) {
                 // if there was no data returned from the API call
                 // search coin.js for coin with name == 'coinID'
-                coins.map(function (coin) {
+                coins.map(function(coin) {
                     // if there is a coin with that name
                     if (coin.name.toLowerCase() == coinID.toLowerCase()) {
                         // call the API function again, this time with the ID
@@ -57,13 +57,31 @@ function searchCoin(coinID) {
                 $("#coin-high-24h").text("$"+data[0].high_24h.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
                 $("#coin-low-24h").text("$"+data[0].low_24h.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
                 $("#coin-image").attr('src', data[0].image); 
-                     
-                  
-                  
+                    
+                percentChange(data[0].price_change_percentage_24h);
             };
         });
 };
 
+
+//create function to change 24 hour tile color
+function percentChange(priceChange) {
+
+    $('#percent-color').removeClass('increase');
+    $('#percent-color').removeClass('decrease');
+
+    if (priceChange > 0) {
+        $('#percent-color').addClass('increase');
+    }
+
+    if (priceChange < 0) {
+        $('#percent-color').addClass('decrease');
+    }
+
+
+}
+
+percentChange();
 
 //create function for autocomplete:
 
@@ -83,10 +101,10 @@ function newsCall(coinID) {
     const queryURL = `http://api.mediastack.com/v1/news?access_key=77120c571d11ab921b880ec13a9fc2c6&keywords=${coinID}&categories=business&countries=au,us`;
 
     fetch(queryURL)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
             // log the total number of search results
             //console.log(data)
 
@@ -96,17 +114,17 @@ function newsCall(coinID) {
                 return console.log("no news")
             } else {
                 // process the data for appending
-                for(var i = 0; i < 6; i++) {
-                    $("#news-title_"+i).text(data.data[i].title);
-                    $("#news-author_"+i).text(data.data[i].author);                  
-                    $("#news-url_"+i).attr('href', data.data[i].url);
-                    $("#news-image_"+i).attr('src', data.data[i].image); 
-                    $("#news-country_"+i).text(data.data[i].country);
-                    $("#news-description_"+i).text(data.data[i].description);   
-                      
-                  }
+                for (var i = 0; i < 6; i++) {
+                    $("#news-title_" + i).text(data.data[i].title);
+                    $("#news-author_" + i).text(data.data[i].author);
+                    $("#news-url_" + i).attr('href', data.data[i].url);
+                    $("#news-image_" + i).attr('src', data.data[i].image);
+                    $("#news-country_" + i).text(data.data[i].country);
+                    $("#news-description_" + i).text(data.data[i].description);
+
+                }
             };
-                
+
         });
 };
 
