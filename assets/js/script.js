@@ -64,6 +64,23 @@ function searchCoin(coinID) {
         });
 };
 
+function percentChange(priceChange) {
+
+    $('#percent-color').removeClass('increase');
+    $('#percent-color').removeClass('decrease');
+
+    if (priceChange > 0) {
+        $('#percent-color').addClass('increase');
+    }
+
+    if (priceChange < 0) {
+        $('#percent-color').addClass('decrease');
+    }
+
+
+}
+
+percentChange();
 
 //create function for autocomplete:
 
