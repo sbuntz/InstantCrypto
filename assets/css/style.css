@@ -26,6 +26,16 @@ nav.navbar {
   color: #8a8a8a;
 }
 
+#ui-id-1 {
+  background-color: #fdfcfcf5;
+  width: 15rem;
+  border-radius: 5%;
+  height: auto;
+  overflow: hidden;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}
+
 .search-coin {
   text-align: center;
   display: flex;
@@ -189,7 +199,6 @@ input:-webkit-autofill {
   background: #fff;
   box-shadow: rgba(0, 0, 0, .4) 0 1px 0;
   border-radius: 4px;
-  display: inline-block;
   margin: 10px;
   position: relative;
   box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);

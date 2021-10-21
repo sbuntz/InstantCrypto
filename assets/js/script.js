@@ -88,7 +88,7 @@ function newsCall(coinID) {
         })
         .then(function (data) {
             // log the total number of search results
-            console.log(data)
+            //console.log(data)
 
             // if there are no news articles, 
             if (!data.data[0]) {
