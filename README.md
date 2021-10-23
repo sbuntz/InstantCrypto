@@ -5,7 +5,7 @@ Working in a small group we were given the opportunity to create and develop a w
 
 The project had to include the following: 
 - Use a CSS framework other than Bootstrap 
-- Be interative (i.e accept and respond to user input)
+- Be interactive (i.e accept and respond to user input)
 - Use at least two Server-side API's
 - Does not use alerts, confirms or prompts
 - Use client-side storage to store persisent data 
@@ -25,7 +25,7 @@ There were a number of problems that had to be resolved in order to successfully
 3) Ensuring that all members of the project understood the desired outcome and were able to efficiently work towards the outcome. 
 4) Finding a CSS framework that was not Bootstrap. 
 
-Depsite these probems we were able to overcome them to successfully create and launch our application. In doing so we learnt many skills that will help us to further develop as web developers. A standout learning outcome was when using serve-side APIs it is important to have a firm understanding of its documentation. This is important to understand as it highlights what is included as well with the API as well as limitations, for example; how many API calls are included and if you exceed these calls what happens. Another important lesson was how to successfully use Git branching / merging and why it is important as well as how to resolve any conflicts that can occur.  
+Depsite these probems we were able to overcome them to successfully create and launch our application. In doing so we learnt many skills that will help us to further develop as web developers. A standout learning outcome was when using serve-side APIs it is important to have a firm understanding of it's documentation. This is important to understand as it highlights what is included as well with the API as well as limitations, for example; how many API calls are included and if you exceed these calls what happens. Another important lesson was how to successfully use Git branching / merging and why it is important as well as how to resolve any conflicts that can occur.  
 
 
 ## Usage
@@ -33,7 +33,7 @@ The user opens up the application and is presented with a default cryptocurrency
 
 ![default](assets/images/default.png)
 
-The user is then able to search any cryptocurrency using the search bar to bring up the data for the respective coin they search, such as VeChain. An autocomplete was also included in the search bar for the users convenience.  
+The user is then able to search any cryptocurrency using the search bar to bring up the data for the respective coin they search, such as VeChain. An autocomplete was also included in the search bar for the user's convenience.  
 
 ![search](assets/images/search.png)
 
@@ -53,7 +53,7 @@ If the user refreshes the landing page, the most recent search is stored in loca
 
 ![local](assets/images/local.png)
 
-If the user clicks on the desired news article a new landing page window opens and they are taken to the new article. Note; InstantCrpyto landing page does not close. 
+If the user clicks on the desired news article a new landing page window opens and they are taken to the new article. Note: InstantCrpyto landing page does not close. 
 
 ![window](assets/images/window.png)
 
