@@ -19,7 +19,7 @@ Our motivation was to make an application that highlighted all the skills and kn
 
 We decided to build our project around 2 seperate elements that logically blend well together, but in the real world do not appear to be common. We paired cryptocurrency data with recent and relevant news articles related to a specific cryptocurrency. This would allow a user to have a more streamlined experience and stay in one place, rather than checking the value of their currency and then having to open a new application to find out why the value has changed or increased. 
 
-There were a number of problems that had to be resolved in order to successfully launch the web-application; InstantCrypto. 
+There were a number of problems that had to be resolved in order to successfully launch the web-application; **InstantCrypto**. 
 1) Finding the correct server-side API's that would allow us to extract the neccessary data to use in our application.
 2) Understanding and implementing git branching and merging while working in a team enviroment. 
 3) Ensuring that all members of the project understood the desired outcome and were able to efficiently work towards the outcome. 
