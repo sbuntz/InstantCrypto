@@ -1,16 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
 html,
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 1.4rem;
     line-height: 1.5;
     height: 100%;
     background: white;
+    font-size: 62.5%;
 }
 
 nav.navbar {
   height: 4rem;
   margin-bottom: 1rem;
   box-shadow: 0 0 0.8rem 0.8rem rgba(129, 129, 129, 0.05);
+  font-size: 1.6rem;
 }
 
 #logo-title {
@@ -33,7 +40,7 @@ nav.navbar {
   height: auto;
   overflow: hidden;
   padding-left: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .search-coin {
@@ -42,9 +49,9 @@ nav.navbar {
   align-items: flex-end;
   cursor: pointer;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 0.1rem;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .search-bar {
@@ -107,10 +114,21 @@ input:-webkit-autofill {
     color: #209cee;
 }
 
+.is-parent {
+  height: 20rem;
+}
+
+
+.price-info {
+  padding-top: 2.5rem;
+}
+
+
 .info-tiles {
     margin: 1rem 0;
     font-weight: 8rem;
     color: #8F99A3;
+
 }
 
 .info-tiles .title {
@@ -162,17 +180,17 @@ input:-webkit-autofill {
     height: 100%;
     align-items: center !important;
     text-align: center !important;
-    margin-bottom: -0.8rem;
-    margin-top: -0.8rem;
+    margin-bottom: -0.4rem;
+    margin-top: -0.5rem;
 }
 
 #coin-price {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #646464;
     height: 100%;
     align-items: center !important;
     text-align: center !important;
-    margin-bottom: -0.5rem;
+    margin-bottom: -0.1rem;
 }
 
 #coin-price_2 {
