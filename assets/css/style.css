@@ -154,7 +154,7 @@ input:-webkit-autofill {
 
 .card-content .content h4 {
   height: 4rem;
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 500;
   color: #5e6164;
   overflow: hidden;
@@ -162,7 +162,7 @@ input:-webkit-autofill {
 }
 
 .card-content .content p {
-  height: 2.5rem;
+  height: 2.1rem;
   font-size: 1.6rem;
   font-weight: 500;
   color: #5e6164; 
@@ -176,7 +176,7 @@ input:-webkit-autofill {
 }
 
 #coin-heading {
-    font-size: 2rem;
+    font-size: 2.4rem;
     color: #707070;
     height: 100%;
     align-items: center !important;
@@ -186,7 +186,7 @@ input:-webkit-autofill {
 }
 
 #coin-price {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #646464;
     height: 100%;
     align-items: center !important;
@@ -195,7 +195,7 @@ input:-webkit-autofill {
 }
 
 #coin-price_2 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #8F99A3;
     height: 100%;
     align-items: center !important;
