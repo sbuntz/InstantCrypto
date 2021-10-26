@@ -36,7 +36,7 @@ There were a number of problems that had to be resolved in order to successfully
 Depsite these probems we were able to overcome them to successfully create and launch our application. In doing so we learnt many skills that will help us to further develop as web developers. A standout learning outcome was when using serve-side APIs it is important to have a firm understanding of it's documentation. This is important to understand as it highlights what is included as well with the API as well as limitations, for example; how many API calls are included and if you exceed these calls what happens. Another important lesson was how to successfully use Git branching / merging and why it is important as well as how to resolve any conflicts that can occur.
 
 ## Usage
-View the deployed application at https://josephdaw.github.io/instant-crypto
+View the deployed application at https://sbuntz.github.io/InstantCrypto
 
 The user opens up the application and is presented with a default cryptocurrency (Bitcoin) and is presented with an array of data. The data presented is; current price (presented in AUD), % price change for the past 24hours (if negative change tile will be red, if positive tile will be green), all time high price and finally the 24 hour high and low price. 
 
