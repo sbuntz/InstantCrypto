@@ -1,4 +1,12 @@
 # Group Project 1 - InstantCrypto 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Table of Contents
+- [Description](#description)
+- [Usage](#usage)
+- [Features](#features)
+- [Credits](#credits)
+- [License](#license)
 
 ## Description
 Working in a small group we were given the opportunity to create and develop a web-application of our choosing.
@@ -25,10 +33,11 @@ There were a number of problems that had to be resolved in order to successfully
 3) Ensuring that all members of the project understood the desired outcome and were able to efficiently work towards the outcome. 
 4) Finding a CSS framework that was not Bootstrap. 
 
-Depsite these probems we were able to overcome them to successfully create and launch our application. In doing so we learnt many skills that will help us to further develop as web developers. A standout learning outcome was when using serve-side APIs it is important to have a firm understanding of it's documentation. This is important to understand as it highlights what is included as well with the API as well as limitations, for example; how many API calls are included and if you exceed these calls what happens. Another important lesson was how to successfully use Git branching / merging and why it is important as well as how to resolve any conflicts that can occur.  
-
+Depsite these probems we were able to overcome them to successfully create and launch our application. In doing so we learnt many skills that will help us to further develop as web developers. A standout learning outcome was when using serve-side APIs it is important to have a firm understanding of it's documentation. This is important to understand as it highlights what is included as well with the API as well as limitations, for example; how many API calls are included and if you exceed these calls what happens. Another important lesson was how to successfully use Git branching / merging and why it is important as well as how to resolve any conflicts that can occur.
 
 ## Usage
+View the deployed application at https://josephdaw.github.io/instant-crypto
+
 The user opens up the application and is presented with a default cryptocurrency (Bitcoin) and is presented with an array of data. The data presented is; current price (presented in AUD), % price change for the past 24hours (if negative change tile will be red, if positive tile will be green), all time high price and finally the 24 hour high and low price. 
 
 ![default](assets/images/default.png)
@@ -57,6 +66,16 @@ If the user clicks on the desired news article a new landing page window opens a
 
 ![window](assets/images/window.png)
 
+## Features
+- HTML
+- CSS 
+- Bulma 
+- Font Awesome 
+- JQuery 
+- Server-side API's
+- Git Branching Workflow 
+- Agile Software Development 
+
 ## Credits
 The collaborators for this project were: 
 - Stefanie Buntz - https://github.com/sbuntz 
@@ -70,16 +89,5 @@ https://www.coingecko.com/en/api
 News article data was collected using: 
 https://mediastack.com/
 
-
-## Features
-- HTML
-- CSS 
-- Bulma 
-- Font Awesome 
-- JQuery 
-- Server-side API's
-- Git Branching Workflow 
-- Agile Software Development 
-
-
-
+## License
+This project is released under the [MIT License](LICENSE)
